@@ -35,7 +35,7 @@ $ curl --header "Content-Type: application/json" \
 
 ```
 
-You can replace the given JSON body input with any.
+You can replace the above JSON body input with any.
 
 To access the uploaded JSON body input, input http://127.0.0.1:5000/ in any browser.
 
@@ -53,7 +53,7 @@ $ curl --header "Content-Type: application/json" \
 
 ```
 
-You can replace the given JSON body input with any.
+You can replace the above JSON body input with any.
 
 To access the uploaded JSON body input, input https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/dev in any browser.
 
