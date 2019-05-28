@@ -61,7 +61,7 @@ To remotely access the uploaded JSON body input, input https://1d7ci3alv5.execut
 ```
 As a User 
 So I can upload data, I can upload a JSON body input to S3 using a POST request.
-So I can access data , I can access this JSON body input from S3 using a GET request.
+So I can access data , I can access the JSON body input from S3 using a GET request.
 
 ```
 
