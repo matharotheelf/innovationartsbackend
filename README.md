@@ -43,7 +43,7 @@ To access the uploaded JSON body input, input http://127.0.0.1:5000/ in any brow
 
 The code is deployed to AWS Lambda so can be accessed remotely.
 
-Similarly to locally, to upload the JSON body input '{"username":"xyz","password":"xyz"}' to S3:
+Similarly, to remotely upload the JSON body input '{"username":"xyz","password":"xyz"}' to S3:
 
 ```bash
 $ curl --header "Content-Type: application/json" \
