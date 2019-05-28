@@ -1,4 +1,4 @@
-# innovationartsbackend
+# Innovation Arts Backend Test
 Creating an API with Flask and AWS
 
 ## Description
