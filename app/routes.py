@@ -1,7 +1,6 @@
 import boto3
 from flask import request
 from app import app
-import json
 
 @app.route("/posttos3/", methods=['POST'])
 def posttos3():
@@ -9,7 +8,7 @@ def posttos3():
     s3 = boto3.resource('s3')
     object = s3.Object('innovationarts', 'json.txt')
     object.put(Body=json)
-    return "done"
+    return "Done"
 
 @app.route("/")
 def getfroms3():
