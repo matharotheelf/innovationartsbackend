@@ -55,7 +55,7 @@ $ curl --header "Content-Type: application/json" \
 
 You can replace the above JSON body input with any.
 
-To access the uploaded JSON body input, input https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/dev in any browser.
+To remotely access the uploaded JSON body input, input https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/dev in any browser.
 
 ## User Stories
 ```
