@@ -22,7 +22,7 @@ To clone this repository and start the server:
 ```bash
 $ git clone https://github.com/matharotheelf/innovationartsbackend
 $ cd innovationartsbackend
-$ python3 
+$ python3 run.py
 
 ```
 To upload the JSON body input '{"username":"xyz","password":"xyz"}' to S3:
