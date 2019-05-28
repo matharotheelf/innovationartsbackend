@@ -49,13 +49,13 @@ Similarly to locally, to upload the JSON body input '{"username":"xyz","password
 $ curl --header "Content-Type: application/json" \
     --request POST \
     --data '{"username":"xyz","password":"xyz"}' \
-    https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/devposttos3/
+    https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/dev/posttos3/
 
 ```
 
 You can replace the given JSON body input with any.
 
-To access the uploaded JSON body input, input https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/ in any browser.
+To access the uploaded JSON body input, input https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/dev in any browser.
 
 ## User Stories
 ```
