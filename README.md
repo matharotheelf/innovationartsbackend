@@ -3,9 +3,9 @@ Creating an API with Flask and AWS
 
 ## Description
 
-This app allows the user to create an API. It has the following features:
-* Users can upload a JSON string to S3 using a POST request
-* Users can view this JSON string from S2 using a GET request.
+This app allows the user to post to and view an API. It has the following features:
+* Users can upload a JSON body input to S3 using a POST request.
+* Users can access this JSON body input from S3 using a GET request.
 
 ## Tech Stack
 
@@ -15,68 +15,81 @@ Python 3.7.2, Flask, Boto3, AWS S3
 
 AWS Lambda with Zappa
 
-## Quickstart
+## Quickstart Local
+
+To clone this repository and start the server:
 
 ```bash
-$ git clone https://github.com/matharotheelf/Saved_game
+$ git clone https://github.com/matharotheelf/innovationartsbackend
+$ cd innovationartsbackend
+$ python3 
 
 ```
-To see the widget run the file index.html in any browser.
+To upload the JSON body input '{"username":"xyz","password":"xyz"}' to S3:
 
-To run the tests run the file SpecRunner.html in any browser.
+```bash
+$ curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"username":"xyz","password":"xyz"}' \
+    http://127.0.0.1:5000/posttos3/
+
+```
+
+You can replace the given JSON body input with any.
+
+To access the uploaded JSON body input, input http://127.0.0.1:5000/ in any browser.
 
 ## How to Use
 
-When on the page of the app, press "Complete Game" to complete the 'game'.
+The code is deployed to AWS Lambda so can be accessed remotely.
 
-Then you can press "Restart Game" to restart the 'game'.
+Similarly to locally, to upload the JSON body input '{"username":"xyz","password":"xyz"}' to S3:
 
-To save the progress of the 'game' as either complete or incomplete press "Save Game". This means when you re-open the page later in the same browser you will find the 'game' in the same state.
+```bash
+$ curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"username":"xyz","password":"xyz"}' \
+    https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/devposttos3/
+
+```
+
+You can replace the given JSON body input with any.
+
+To access the uploaded JSON body input, input https://1d7ci3alv5.execute-api.eu-west-2.amazonaws.com/ in any browser.
 
 ## User Stories
 ```
 As a User 
-So I can complete my 'game', I can press a "Complete Game" button which completes my 'game'.
-So I can restart my 'game', I can press a "Restart Game" button which restarts my 'game'.
-So I can save my 'game', I can press a "Save Game" button which stores my 'game' status to local storage.
+So I can upload data, I can upload a JSON body input to S3 using a POST request.
+So I can access data , I can access this JSON body input from S3 using a GET request.
 
 ```
 
-## Screenshots
-
-**App When Game Incomplete**
-
-<img width="649" alt="Screen Shot 2019-05-21 at 12 45 33" src="https://user-images.githubusercontent.com/44533664/58093811-376b5480-7bc7-11e9-8012-4426f85f2d36.png">
-
-**App When Game Complete**
-
-<img width="625" alt="Screen Shot 2019-05-21 at 12 45 47" src="https://user-images.githubusercontent.com/44533664/58094032-a5178080-7bc7-11e9-8324-c638627535ca.png">
-
 ## References
 
-To display whether game is complete or incomplete: 
+Learning Flask:
 
-https://stackoverflow.com/questions/3961422/conditional-display-of-html-element-forms
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
-https://stackoverflow.com/questions/2928688/how-to-hide-elements-without-having-them-take-space-on-the-page
+https://stackoverflow.com/questions/45476139/how-to-make-a-post-request-in-flask-post-method
 
-https://stackoverflow.com/questions/17630945/is-there-an-opposite-to-displaynone
+http://flask.pocoo.org/docs/1.0/quickstart/
 
-To create buttons: 
+Uploading data to S3:
 
-https://www.w3schools.com/jsref/event_onclick.asp
+https://stackoverflow.com/questions/40336918/how-to-write-a-file-or-data-to-an-s3-object-using-boto3
 
-To format the user interface:
+https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Bucket.upload_file
 
-https://css-tricks.com/almanac/properties/t/text-align/
+Reading data from S3:
 
-https://www.w3schools.com/css/css_font.asp
+https://stackoverflow.com/questions/40995251/reading-an-json-file-from-s3-using-python-boto3
 
-https://www.w3schools.com/css/css3_buttons.asp
+Deploying to AWS Lambda:
 
-https://stackoverflow.com/questions/3622756/button-center-css
+https://books.agiliq.com/projects/django-deployments-cookbook/en/latest/using_zappa_lambda_aurora.html
 
-https://stackoverflow.com/questions/15438774/give-space-above-and-below-a-div
+https://www.freecodecamp.org/news/how-to-create-a-serverless-service-in-15-minutes-b63af8c892e5/
 
 ## Contributors 
 
